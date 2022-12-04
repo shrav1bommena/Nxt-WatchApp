@@ -1,0 +1,53 @@
+.site-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-layout-body {
+  display: flex;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.site-layout-content {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.player-wrapper {
+  width: 100%;
+  height: 350px;
+}
+
+@media screen and (min-width: 768px) {
+  .player-wrapper {
+    padding: 25px;
+    width: 100%;
+    height: 70%;
+  }
+}
+
+.react-player- {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.views-and-date-div {
+  display: flex;
+  align-items: center;
+  color: #475569;
+}
+
+.video-channel-details {
+  margin-top: 10px;
+  display: flex;
+}
+
+.video-channel-logo {
+  height: 54px;
+  width: 54px;
+  margin-right: 12px;
+  margin-top: 15px;
+}

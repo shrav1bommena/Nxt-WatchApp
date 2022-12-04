@@ -1,0 +1,161 @@
+.nav-header {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .nav-content {
+    padding-left: 20px;
+  }
+}
+
+.website-logo {
+  width: 125px;
+}
+
+@media screen and (min-width: 768px) {
+  .website-logo {
+    width: 165px;
+  }
+}
+
+.moon-icon {
+  font-size: 22px;
+}
+
+.bright-icon {
+  color: white;
+  font-size: 22px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-self: flex-end;
+  flex: 1;
+  list-style-type: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 767px) {
+  .nav-menu {
+    display: none;
+  }
+}
+
+.nav-menu-mobile {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-menu-mobile {
+    display: none;
+  }
+}
+
+.nav-menu-list-mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-self: center;
+  flex: 1;
+  list-style-type: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.hamburger-menu {
+  border: none;
+  background-color: transparent;
+}
+
+.hamburger-icon-light-theme {
+  height: 26px;
+  width: 26px;
+  color: black;
+}
+
+.hamburger-icon-night-theme {
+  height: 26px;
+  width: 26px;
+  color: white;
+}
+
+.nav-menu-item {
+  align-self: center;
+  font-family: 'Roboto';
+  text-decoration: none;
+  margin: 10px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.nav-profile-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.nav-theme-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.nav-theme-icon {
+  height: 30px;
+  width: 30px;
+}
+
+.nav-logout-button {
+  height: 30px;
+  padding: 3px 15px;
+  border: 2px solid #3b82f6;
+  border-radius: 2px;
+  background-color: #fffffc;
+  color: #3b82f6;
+  font-family: 'Roboto';
+  font-weight: bold;
+}
+
+.popup-content {
+  border-radius: 12px;
+  padding: 0px;
+  border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .popup-content {
+    width: 350px;
+  }
+}
+
+.logout-container {
+  padding: 20px 35px 20px 35px;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.logout-button-container {
+  display: flex;
+  justify-content: space-around;
+}

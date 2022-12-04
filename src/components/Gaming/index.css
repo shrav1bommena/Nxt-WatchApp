@@ -1,0 +1,22 @@
+.site-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-layout-body {
+  display: flex;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.site-layout-content {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.gaming-videos-list-container {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}

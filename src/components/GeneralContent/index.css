@@ -1,0 +1,10 @@
+.failure-and-no-results-img {
+  margin-top: 35px;
+  width: 45%;
+}
+
+@media screen and (min-width: 768px) {
+  .failure-and-no-results-img {
+    max-width: 400px;
+  }
+}

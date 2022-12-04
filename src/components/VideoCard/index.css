@@ -1,0 +1,27 @@
+.link-video {
+  text-decoration: none;
+}
+
+.views-and-reaction-div {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .views-and-reaction-div {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.views-and-date-div {
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  color: #475569;
+}
+
+.view-dot-icon {
+  margin-bottom: 13px;
+}

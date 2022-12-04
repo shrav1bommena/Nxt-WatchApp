@@ -1,0 +1,21 @@
+.gaming-video-link {
+  text-decoration: none;
+}
+
+.gaming-video-img {
+  width: 160px;
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 576px) {
+  .gaming-video-img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .gaming-video-img {
+    width: 240px;
+    height: 330px;
+  }
+}

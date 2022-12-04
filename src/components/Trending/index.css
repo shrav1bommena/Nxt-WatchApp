@@ -1,0 +1,28 @@
+.site-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-layout-body {
+  display: flex;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.site-layout-content {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.trending-videos-list-container {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+@media screen and (min-width: 576px) {
+  .trending-videos-list-container {
+    padding: 30px;
+    padding-top: 40px;
+  }
+}
