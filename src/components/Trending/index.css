@@ -18,11 +18,38 @@
 .trending-videos-list-container {
   list-style-type: none;
   padding-left: 0px;
+  max-width: 1024px;
 }
 
 @media screen and (min-width: 576px) {
   .trending-videos-list-container {
-    padding: 30px;
-    padding-top: 40px;
+    padding: 25px;
+    margin-top: 0;
   }
+}
+
+@media screen and (min-width: 768px) {
+  .trending-videos-list-container {
+    padding: 55px;
+    margin-top: 0;
+  }
+}
+
+.trending-failure-image {
+  width: 90%;
+  max-width: 330px;
+}
+
+.trending-failure-retry-button {
+  height: 38px;
+  width: 92px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4a47e0;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
 }

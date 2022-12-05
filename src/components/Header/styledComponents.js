@@ -11,6 +11,12 @@ export const LogoutContainer = styled.div`
 export const LogoutText = styled.p`
   color: ${props => (props.darkTheme ? '#ffffff' : '#212121')};
 `
+export const LogoutButton = styled.button`
+  background-color: ${props => (props.darkTheme ? '#212121' : '#ffffff')};
+  border: 2px solid '#3b82f6';
+  border-color: ${props => (props.darkTheme ? '#ffffff' : '#3b82f6')};
+  color: ${props => (props.darkTheme ? '#ffffff' : '#3b82f6')};
+`
 
 export const LogoutConfirmButton = styled.button`
   height: 36px;

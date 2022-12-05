@@ -17,6 +17,47 @@
 
 .gaming-videos-list-container {
   list-style-type: none;
+  margin-top: 0;
+  padding-left: 0;
   display: flex;
   flex-wrap: wrap;
+  padding: 25px;
+  padding-right: 20px;
+}
+
+@media screen and (min-width: 576px) {
+  .gaming-videos-list-container {
+    padding: 25px;
+    padding-right: 20px;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .gaming-videos-list-container {
+    padding: 55px;
+    padding-top: 50px;
+    padding-right: 0px;
+
+    margin-top: 0;
+  }
+}
+
+.gaming-failure-image {
+  width: 90%;
+  max-width: 330px;
+}
+
+.gaming-failure-retry-button {
+  height: 38px;
+  width: 92px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4a47e0;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
 }

@@ -1,11 +1,23 @@
 import {Link} from 'react-router-dom'
 import {formatDistanceToNow} from 'date-fns'
+import {HiFire} from 'react-icons/hi'
 
 import Header from '../Header'
 import HomeLeftTab from '../HomeLeftTab'
 import ThemeContextWithSaved from '../../context/SavedVideosContext'
 
-import VideosContainer from './styledComponents'
+import {
+  VideosContainer,
+  VideoContainer,
+  VideoThumbnail,
+  VideoTitle,
+  VideosDetailsDesc,
+  NoVideosContainer,
+  NoVideosHeading,
+  NoVideosDescription,
+  SavedVideosBanner,
+  SavedVideosIconContainer,
+} from './styledComponents'
 
 import './index.css'
 
@@ -29,10 +41,13 @@ const SavedVideos = () => (
               >
                 {showVideos ? (
                   <div>
-                    <div data-testid="banner">
+                    <SavedVideosBanner darkTheme={darkTheme}>
+                      <SavedVideosIconContainer darkTheme={darkTheme}>
+                        <HiFire />
+                      </SavedVideosIconContainer>
                       <h1>Saved Videos</h1>
-                    </div>
-                    <ul>
+                    </SavedVideosBanner>
+                    <ul className="saved-videos-list-container">
                       {savedVideosList.map(eachVideo => {
                         const {
                           id,
@@ -47,37 +62,55 @@ const SavedVideos = () => (
                         const {name, profileImageUrl, subscriberCount} = channel
 
                         return (
-                          <Link to={`/videos/${id}`} key={id}>
-                            <li>
-                              <img src={thumbnailUrl} alt="video thumbnail" />
-                              <div>
-                                <p>{title}</p>
-                                <p>{name}</p>
+                          <Link
+                            key={id}
+                            className="link-video"
+                            to={`/videos/${id}`}
+                          >
+                            <VideoContainer>
+                              <VideoThumbnail
+                                src={thumbnailUrl}
+                                alt="video thumbnail"
+                              />
+                              <div className="saved-video-details-container">
+                                <VideoTitle darkTheme={darkTheme}>
+                                  {title}
+                                </VideoTitle>
+                                <VideosDetailsDesc>{name}</VideosDetailsDesc>
                                 <div>
-                                  <p>{viewCount} views .</p>
-                                  <p>
+                                  <VideosDetailsDesc>
+                                    {viewCount} views
+                                  </VideosDetailsDesc>
+                                  <VideosDetailsDesc>
                                     {formatDistanceToNow(
                                       new Date(publishedAt),
-                                      {addSuffix: true},
+                                      {
+                                        addSuffix: true,
+                                      },
                                     )}
-                                  </p>
+                                  </VideosDetailsDesc>
                                 </div>
                               </div>
-                            </li>
+                            </VideoContainer>
                           </Link>
                         )
                       })}
                     </ul>
                   </div>
                 ) : (
-                  <div>
+                  <NoVideosContainer darkTheme={darkTheme}>
                     <img
+                      className="no-videos-image"
                       src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-saved-videos-img.png"
                       alt="no saved videos"
                     />
-                    <h1>No saved videos found</h1>
-                    <p>You can save your videos while watching them</p>
-                  </div>
+                    <NoVideosHeading darkTheme={darkTheme}>
+                      No saved videos found
+                    </NoVideosHeading>
+                    <NoVideosDescription darkTheme={darkTheme}>
+                      You can save your videos while watching them
+                    </NoVideosDescription>
+                  </NoVideosContainer>
                 )}
               </VideosContainer>
             )

@@ -14,3 +14,37 @@
   flex-grow: 1;
   overflow-y: auto;
 }
+
+.no-videos-image {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.saved-videos-list-container {
+  list-style-type: none;
+  padding-left: 0px;
+  max-width: 1024px;
+}
+
+@media screen and (min-width: 576px) {
+  .saved-videos-list-container {
+    padding: 25px;
+    padding-right: 20px;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .saved-videos-list-container {
+    padding: 55px;
+    padding-right: 20px;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .saved-video-details-container {
+    padding: 0 10px;
+  }
+}

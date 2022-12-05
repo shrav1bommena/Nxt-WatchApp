@@ -8,7 +8,7 @@ export const VideosContainer = styled.div`
 export const VideoTopSection = styled.div`
   padding: 15px;
   @media screen and (min-width: 768px) {
-    padding: 25px;
+    padding: 0 25px 25px 25px;
   }
 `
 

@@ -13,6 +13,10 @@ import {
   VideosContainer,
   GamingBanner,
   GamingIconContainer,
+  FailureContainer,
+  FailureHeading,
+  FailureDescription,
+  LoadingContainer,
 } from './styledComponents'
 
 const apiStatusConstants = {
@@ -76,8 +80,8 @@ class Gaming extends Component {
               darkTheme={darkTheme}
               className="site-layout-content"
             >
-              <GamingBanner>
-                <GamingIconContainer>
+              <GamingBanner darkTheme={darkTheme}>
+                <GamingIconContainer darkTheme={darkTheme}>
                   <SiYoutubegaming />
                 </GamingIconContainer>
                 <h1>Gaming</h1>
@@ -95,25 +99,62 @@ class Gaming extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="loader-container" data-testid="loader">
-      <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
-    </div>
+    <ThemeContextWithSaved.Consumer>
+      {value => {
+        const {darkTheme} = value
+        const loadingColor = darkTheme ? '#ffffff' : '#000000'
+
+        return (
+          <LoadingContainer
+            darkTheme={darkTheme}
+            className="loader-container"
+            data-testid="loader"
+          >
+            <Loader
+              type="ThreeDots"
+              color={loadingColor}
+              height="50"
+              width="50"
+            />
+          </LoadingContainer>
+        )
+      }}
+    </ThemeContextWithSaved.Consumer>
   )
 
   renderFailureView = () => (
-    <div>
-      <img
-        src="https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png"
-        alt="failure view"
-      />
-      <h1>Oops! Something Went Wrong</h1>
-      <p>
-        We are having some trouble to complete your request. Please try again.
-      </p>
-      <button type="button" onClick={this.getDataOnRetry}>
-        Retry
-      </button>
-    </div>
+    <ThemeContextWithSaved.Consumer>
+      {value => {
+        const {darkTheme} = value
+        const failureImageUrl = darkTheme
+          ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
+          : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
+
+        return (
+          <FailureContainer darkTheme={darkTheme}>
+            <img
+              className="gaming-failure-image"
+              src={failureImageUrl}
+              alt="failure view"
+            />
+            <FailureHeading darkTheme={darkTheme}>
+              Oops! Something Went Wrong
+            </FailureHeading>
+            <FailureDescription darkTheme={darkTheme}>
+              We are having some trouble to complete your request. Please try
+              again.
+            </FailureDescription>
+            <button
+              className="gaming-failure-retry-button"
+              type="button"
+              onClick={this.getTrendingVideosList}
+            >
+              Retry
+            </button>
+          </FailureContainer>
+        )
+      }}
+    </ThemeContextWithSaved.Consumer>
   )
 
   renderGamingVideos = () => {

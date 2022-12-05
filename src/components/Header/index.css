@@ -1,8 +1,14 @@
 .nav-header {
-  height: 10vh;
+  height: 8vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-header {
+    height: 10vh;
+  }
 }
 
 .nav-content {

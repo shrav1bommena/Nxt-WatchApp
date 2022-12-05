@@ -18,6 +18,7 @@ import {
   HeaderNav,
   LogoutContainer,
   LogoutText,
+  LogoutButton,
   LogoutCancelButton,
   LogoutConfirmButton,
 } from './styledComponents'
@@ -134,9 +135,13 @@ class Header extends Component {
                     <Popup
                       modal
                       trigger={
-                        <button className="nav-logout-button" type="button">
+                        <LogoutButton
+                          darkTheme={darkTheme}
+                          className="nav-logout-button"
+                          type="button"
+                        >
                           Logout
-                        </button>
+                        </LogoutButton>
                       }
                     >
                       {close => (

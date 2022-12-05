@@ -1,11 +1,23 @@
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import {AiFillHome} from 'react-icons/ai'
 import {HiFire} from 'react-icons/hi'
 import {SiYoutubegaming} from 'react-icons/si'
 import {CgPlayListAdd} from 'react-icons/cg'
 import ThemeContextWithSaved from '../../context/SavedVideosContext'
 
-import {Sidebar, SocialMediaLogo, ActiveTab} from './styledComponents'
+import {
+  Sidebar,
+  SocialMediaLogo,
+  HomeTab,
+  TrendingTab,
+  SavedVideosTab,
+  GamingTab,
+  HomeTabText,
+  TrendingText,
+  GamingText,
+  SavedVideosText,
+  FooterSection,
+} from './styledComponents'
 
 import './index.css'
 
@@ -19,40 +31,68 @@ const TabItemsList = [
 // Making Active Tab Item so active tab background will change
 // change icon color by using css with className value as variable based on darkTheme and ActiveTab
 
-const HomeLeftTab = () => (
+const HomeLeftTab = props => (
   <ThemeContextWithSaved.Consumer>
     {value => {
       const {darkTheme} = value
+      const {location} = props
 
       return (
         <Sidebar darkTheme={darkTheme} className="site-layout-sidebar">
           <div>
             <Link to="/" className="nav-link">
-              <ActiveTab darkTheme={darkTheme} className="site-tab-item ">
+              <HomeTab
+                darkTheme={darkTheme}
+                path={location.pathname}
+                className="site-tab-item "
+              >
                 <AiFillHome className="nav-tab-icon" />
-                <p>Home</p>
-              </ActiveTab>
+                <HomeTabText darkTheme={darkTheme} path={location.pathname}>
+                  Home
+                </HomeTabText>
+              </HomeTab>
             </Link>
             <Link to="/trending" className="nav-link">
-              <div className="site-tab-item">
+              <TrendingTab
+                darkTheme={darkTheme}
+                path={location.pathname}
+                className="site-tab-item "
+              >
                 <HiFire className="nav-tab-icon" />
-                <p>Trending</p>
-              </div>
+                <TrendingText darkTheme={darkTheme} path={location.pathname}>
+                  Trending
+                </TrendingText>
+              </TrendingTab>
             </Link>
             <Link to="/gaming" className="nav-link">
-              <div className="site-tab-item">
+              <GamingTab
+                darkTheme={darkTheme}
+                path={location.pathname}
+                className="site-tab-item "
+              >
                 <SiYoutubegaming className="nav-tab-icon" />
-                <p>Gaming</p>
-              </div>
+                <GamingText darkTheme={darkTheme} path={location.pathname}>
+                  Gaming
+                </GamingText>
+              </GamingTab>
             </Link>
             <Link to="/saved-videos" className="nav-link">
-              <div className="site-tab-item">
+              <SavedVideosTab
+                darkTheme={darkTheme}
+                path={location.pathname}
+                className="site-tab-item "
+              >
                 <CgPlayListAdd className="nav-tab-icon" />
-                <p>Saved Videos</p>
-              </div>
+                <SavedVideosText darkTheme={darkTheme} path={location.pathname}>
+                  Saved Videos
+                </SavedVideosText>
+              </SavedVideosTab>
             </Link>
           </div>
-          <div className="sidebar-bottom-section">
+          <FooterSection
+            darkTheme={darkTheme}
+            className="sidebar-bottom-section"
+          >
             <p>CONTACT US</p>
             <div className="social-media-logos-container">
               <SocialMediaLogo
@@ -69,11 +109,11 @@ const HomeLeftTab = () => (
               />
             </div>
             <p>Enjoy! Now to see your channels and recommendations!</p>
-          </div>
+          </FooterSection>
         </Sidebar>
       )
     }}
   </ThemeContextWithSaved.Consumer>
 )
 
-export default HomeLeftTab
+export default withRouter(HomeLeftTab)

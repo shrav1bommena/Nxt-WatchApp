@@ -13,7 +13,7 @@ export const VideoContainer = styled.li`
 export const VideoThumbnail = styled.img`
   width: 100%;
   @media screen and (min-width: 576px) {
-    max-width: 400px;
+    max-width: 350px;
     max-height: 220px;
     margin-right: 10px;
   }
@@ -21,11 +21,11 @@ export const VideoThumbnail = styled.img`
 
 export const VideoTitle = styled.p`
   margin-top: 5px;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 28px;
   font-weight: 500;
   font-family: 'Roboto';
-  color: ${props => (props.darkTheme ? '#ffffff' : '#181818')};
+  color: ${props => (props.darkTheme ? '#f8fbfc' : '#181818')};
 `
 export const VideosDetailsDesc = styled.p`
   font-size: 15px;
